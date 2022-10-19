@@ -24,6 +24,10 @@ function App(){
     )
 }
 
+const newApp =()=>{
+    console.log("start Mobile view")
+}
+
 const AppWrapper = Styled.div`
 background-color:#f1f2f5;
 .app__body{
