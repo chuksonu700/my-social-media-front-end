@@ -11,6 +11,10 @@ import { useStateValue } from './StateProvider';
 function App(){
     const [{user}, dispatch]=useStateValue();
     return(
+        <>
+        <AppWrapper2MobileFirst className='container-fluid'>
+        
+        </AppWrapper2MobileFirst>
         <AppWrapper className='app'>
             {user? <div>
             <Header />
@@ -21,6 +25,7 @@ function App(){
             </div> </div>
             : <Login />}
         </AppWrapper>
+        </>
     )
 }
 
@@ -28,6 +33,9 @@ const newApp =()=>{
     console.log("start Mobile view")
 }
 
+const AppWrapper2MobileFirst= Styled.div`
+background-color:#f1f2f5
+`
 const AppWrapper = Styled.div`
 background-color:#f1f2f5;
 .app__body{
