@@ -15,9 +15,71 @@ import { useStateValue } from "../StateProvider";
 
 
 
-
+export const  MobileHeader = ()=>{
+    const [{user},dispatch] =useStateValue();
+    return(
+        <div className='row gx-0'>
+            
+            <div className="col-md-4 col-xs-12">
+                <HeaderWrapper>
+                    <HeaderLeft>
+                        <img src="logo512.png" alt="Popular" />
+                    </HeaderLeft>
+                    <HeaderInput>
+                        <SearchIcon />
+                        <input placeholder="Search Popular" type="text" />
+                    </HeaderInput>
+                </HeaderWrapper>
+            </div>
+            <div className="col-md-4 col-xs-12">
+                <HeaderWrapper>
+                <HeaderCenter>
+                    <div className="header__option header__option--active">
+                        <HomeIcon fontSize="large" />
+                    </div>
+                    <div className="header__option">
+                        <FlagIcon fontSize="large" />
+                    </div>
+                    <div className="header__option">
+                        <SubscriptionsOutlinedIcon fontSize="large" />
+                    </div>
+                    <div className="header__option">
+                        <StorefrontOutlinedIcon fontSize="large" />
+                    </div>
+                    <div className="header__option">
+                        <SupervisedUserCircleIcon fontSize="large" />
+                    </div>
+                </HeaderCenter>
+                </HeaderWrapper>
+            </div>
+            <div className="col-md-4 col-xs-12">
+                <HeaderWrapper>
+                <HeaderRight>
+                    <div className="header__info">
+                        <Avatar src={user.photoURL} />
+                        <h6>{user.displayName}</h6>
+                    </div>
+                    <IconButton>
+                        <AddIcon />
+                    </IconButton>
+                    <IconButton>
+                        <ForumIcon />
+                    </IconButton>
+                    <IconButton>
+                        <NotificationsActiveIcon />
+                    </IconButton>
+                    <IconButton>
+                        <ExpandMoreIcon />
+                    </IconButton>
+                </HeaderRight>
+                </HeaderWrapper>
+            </div>
+            
+        </div>
+    )
+}
 function Header(){
-    const [{user},dispatch]=useStateValue();
+    const [{user},dispatch] =useStateValue();
         return(
             <HeaderWrapper>
                 <HeaderLeft>
@@ -47,7 +109,7 @@ function Header(){
                 <HeaderRight>
                     <div className="header__info">
                         <Avatar src={user.photoURL} />
-                        <h4>{user.displayName}</h4>
+                        <h6>{user.displayName}</h6>
                     </div>
                     <IconButton>
                         <AddIcon />

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Styled from 'styled-components';
-import Header from './Components/Header';
+import Header,{MobileHeader} from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import Feed from './Components/Feeds';
 import Widget from './Components/Widget';
@@ -12,8 +12,12 @@ function App(){
     const [{user}, dispatch]=useStateValue();
     return(
         <>
-        <AppWrapper2MobileFirst className='container-fluid'>
-        
+        <AppWrapper2MobileFirst className='container-fluid g-0'>
+        {user? <div >
+        <MobileHeader />
+        </div>
+        :<Login />
+        }
         </AppWrapper2MobileFirst>
         <AppWrapper className='app'>
             {user? <div>
